@@ -1,0 +1,185 @@
+/* Overall approach is to use grid to divide the website into functional boxes */
+
+/* general properties of the body of the website */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: black;
+  background-color: #4974a5;
+}
+
+/* Formatting website header bar*/
+div.header {
+  background-color: #910115;
+  height: 50px;
+  margin-bottom: 10px;
+  width: 100%
+}
+
+header h1.logo {
+  margin: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+footer {
+  position: relative;
+  margin-top: 10px;
+  padding-bottom: 50px; /* add some padding to create space for the h1 element */
+  background-color: #910115;
+}
+
+footer h1.logo2 {
+  margin: 10px;
+  font-size: 1.2em;
+  color: #fff;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+/* First box on left column: Website summary ------------------------------------------------------------------- */
+.container1 {
+  margin-left: 10px;
+  grid-area: my_container1;
+}
+
+div.site_summary {
+  padding: 10px;
+  background-color: #eeeeee;
+  -webkit-border-radius: 6px;      /* these radius lines give nice rounded boxes for different browsers */
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+
+/* Second box on left column: User inputs --------------------------------------------------------------------- */
+.container2 {
+  margin-left: 10px;
+  grid-area: my_container2;
+  grid-row: 2 / span 3;
+}
+
+.user_inputs {
+  padding: 10px;
+  max-width: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: auto;
+  background-color: #eeeeee;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+
+/* Third box on left column: another summary ------------------------------------------------------------------- */
+.container3 {
+  margin-left: 10px;
+  margin-bottom: 12px;
+  grid-area: my_container3;
+}
+
+.site_summary2 {
+  padding: 10px;
+  height: 95%;
+  background-color: #eeeeee;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+
+/* Fourth box -- right column: msa Viewer ---------------------------------------------------------------------- */
+.container4 {
+  margin-right: 12px;
+  grid-area: my_container4;
+  grid-row: 1 / span 2;
+}
+
+div.msaView {
+  padding: 10px;
+  background-color: #eeeeee;
+  max-width: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: auto;
+  -webkit-border-radius: 6px;      /* these radius lines give nice rounded boxes for different browsers */
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+
+/* Fifth box --- multiple PDB structures ----------------------------------------------------------------------- */
+.container5 {
+  margin-right: 12px;
+  margin-bottom: 12px;
+  grid-area: my_container5;
+  grid-row: 3 / span 3;
+}
+
+div.pdbView {
+  padding: 10px;
+  height: 98%;
+  background-color: #000000;
+  border: 5px solid #fff;
+  -webkit-border-radius: 6px;      /* these radius lines give nice rounded boxes for different browsers */
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+
+
+
+
+/* Overall webpage grid layout -- body of webpage is wrapped in one container ------------------------------------ */
+.contain_all{
+  display: grid;
+  grid-template-columns: 25% 75%; /* divide the grid into two columns */
+  grid-template-rows: auto; /* define four rows with auto height */
+  grid-template-areas:
+    "my_container1 my_container4"
+    "my_container2 my_container4"
+    "my_container2 my_container5"
+    "my_container2 my_container5"
+    "my_container3 my_container5"; /* specify grid areas for each element */
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+}
+
+/* format different HTML text tags -------------------------------------------------------------------------------- */
+h2 {
+  font-size: 1.7em;
+  margin: 10px;
+  text-align: center;
+  letter-spacing: 0px;
+}
+
+h3 {
+  font-size: 1.7em;
+  font-weight: 100;
+  margin: 10px;
+  text-align: center;
+  letter-spacing: -1px;
+}
+
+h4 {
+  font-size: 1em;
+  margin: 1px;
+  text-align: left;
+  letter-spacing: 0px;
+}
+
+h5 {
+  font-size: 1.7em;
+  margin: 10px;
+  text-align: center;
+  letter-spacing: 0px;
+  color: #4974a5;
+}
+
+textarea {
+  font-size: 16px; /* adjust the value as needed */
+}
+
+

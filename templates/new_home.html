@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+<!-- Top left box -- site summary ------------------------------------------------------------- -->
+{% block content1 %}
+  <div class="site_summary">
+    <h2>Recent advances in predicted folding makes us want to build a website.</h2>
+  </div>
+{% endblock %}
+
+<!-- middle left box -- user input ---------------------------------------------------- -->
+{% block content2 %}
+<div class="user_inputs">
+    <form method="post">
+        <h4>Enter job ID</h4>
+        <input type="text" name="jobID"
+               placeholder="example1219"
+               value="{{ request.form['jobID'] }}">
+        <br>
+        <br>
+        <h4>Enter FASTA formatted sequences</h4>
+        <textarea name="fasta"
+                  placeholder="&gt;sequence1&#10;ANYPEPTIDESTRING&#10;&gt;sequence2&#10;STARSATNIGHT"
+                  rows="25"
+                  cols="43">{{ request.form['fasta'] }}</textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}
+
+<!-- bottom left box -- site summary --------------------------------------------------------------- -->
+{% block content3 %}
+  <div class="site_summary2">
+    <h2>Job ID222.</h2>
+    <h3>Fasta333</h3>
+  </div>
+{% endblock %}
+
+<!-- Top right box -- msa viewer --------------------------------------------------------------------- -->
+{% block msa %}
+  <div class="msaView">
+      <h2>MSA VIEWER</h2>
+      <textarea name="msa"
+                  placeholder="sequence1: ANY--PEPTIDE--STRING&#10;sequence2: STARS--AT--NIGHT"
+                  rows="12"
+                  cols="150">
+
+      </textarea>
+  </div>
+{% endblock %}
+
+<!-- bottom left box -- pdb viewer --------------------------------------------------------------------- -->
+{% block pdb %}
+  <div class="pdbView">
+      <h5>PDB VIEWER</h5>
+      <!-- probably put some javascript in here -->
+  </div>
+{% endblock %}
